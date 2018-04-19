@@ -1,0 +1,240 @@
+.btn-link.danger {
+    color: #b94a48;
+}
+
+.btn-link.danger:hover,
+.btn-link.danger:focus {
+    color: #953b39;
+}
+
+.btn-link.success {
+    color: #468847;
+}
+
+.btn-link.success:hover,
+.btn-link.success:focus {
+    color: #356635;
+}
+
+.btn-link.warning {
+  color: #c09853;
+}
+
+.btn-link.warning:hover,
+.btn-link.warning:focus {
+  color: #a47e3c;
+}
+
+.btn-link.muted {
+  color: #999999;
+}
+
+.btn-link.muted:hover,
+.btn-link.muted:focus {
+  color: #808080;
+}
+
+.btn-link.info {
+  color: #3a87ad;
+}
+
+.btn-link.info:hover,
+.btn-link.info:focus {
+  color: #2d6987;
+}
+
+.jstree-default .jstree-themeicon {
+    background: 0;
+
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.jstree-default .jstree-checkbox {
+    background: 0;
+
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.jstree-default .jstree-checkbox:before {
+    content: "\f096";
+}
+
+.jstree-disabled > .jstree-checkbox {
+    display: none;
+}
+
+/*
+.jstree-default .jstree-checkbox:hover {
+    background: 0;
+}
+*/
+
+.jstree-default.jstree-checkbox-selection .jstree-clicked > .jstree-checkbox:before,
+.jstree-default .jstree-checked > .jstree-checkbox:before {
+    content: "\f046";
+}
+
+/*
+.jstree-default.jstree-checkbox-selection .jstree-clicked > .jstree-checkbox:hover,
+.jstree-default .jstree-checked > .jstree-checkbox:hover {
+    background: 0;
+}
+*/
+
+.jstree-default .jstree-themeicon:before {
+    content: "\f114";
+}
+
+.jstree-default .jstree-open .jstree-themeicon:before {
+    content: "\f115";
+}
+
+.jstree-default .jstree-leaf .jstree-themeicon:before {
+    content: "\f016";
+}
+
+.wsbpm-tab-basic > form, .wsbpm-tab-output-data > form, .wsbpm-tab-extension > form {
+    margin-top: 15px;
+}
+
+#human-task-participant > .nav {
+    margin-top: 5px;
+}
+
+#human-task-participant .nav-pills > li.active > a,
+#human-task-participant .nav-pills > li.active > a:hover,
+#human-task-participant .nav-pills > li.active > a:focus {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+#human-task-participant .nav-pills > li > a {
+    color: #31708f;
+}
+
+#human-task-participant .nav-pills > li > a:hover,
+#human-task-participant .nav-pills > li a:focus {
+    color: #245269;
+}
+
+#human-task-participant .nav-pills > li > a {
+  border-radius: 3px;
+}
+
+#human-task-participant .nav > li > a {
+  padding: 5px 15px;
+  margin-top: 2px;
+  margin-bottom: 7px;
+}
+
+#human-task-participant .wsbpm-desc {
+    margin-top: 5px;
+}
+
+.wsbpm-table-header {
+    position: relative;
+}
+
+.wsbpm-table-header .btn-group {
+    position: absolute;
+    right: 10px;
+}
+
+#human-task-participant .wsbpm-table-container {
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 150px;
+    overflow: auto;
+    /*border: 1px solid #ddd;*/
+}
+
+.wsbpm-tab-output-data .wsbpm-table-container, .wsbpm-tab-extension .wsbpm-table-container {
+    margin-left: 10px;
+    margin-right: 10px;
+    min-height: 200px;
+}
+
+#modal-data-selector .wsbpm-form-container {
+    max-height: 300px;
+}
+
+.wsbpm-ui-selector-tree {
+    height: 300px;
+    overflow: auto;
+}
+
+.wsbpm-participant-selector-tree {
+    height: 300px;
+    overflow: auto;
+}
+
+.wsbpm-ui-selector-tree.jstree.jstree-proton {
+    font-family: "Microsoft YaHei", "Titillium Web", sans-serif, Arial, sans-serif;
+}
+
+#modal-participant-rule-editor .wsbpm-table-container .table{
+    /* border: 1px solid #ddd; */
+}
+
+.wsbpm-table-container > .table  > thead > tr > th {
+    white-space: nowrap;
+}
+
+#participant-rule-param-list > thead > tr > th,  #participant-rule-param-list > tbody > tr > td{
+    white-space: nowrap;    
+}
+
+#time-limit legend, #human-task-work-item legend {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#time-limit .form-group-sm, #human-task-work-item .form-group-sm {
+    margin-bottom: 8px;
+}
+
+.jstree-default .wsbpm-org.jstree-themeicon:before {
+    content: "\f19c";
+}
+
+.jstree-default .wsbpm-user.jstree-themeicon:before {
+    content: "\f007";
+}
+
+.jstree-default .wsbpm-role.jstree-themeicon:before {
+    content: "\f183";
+}
+
+.wsbpm-rule-param-separator {
+    margin-left: 8px;
+}
+
+.wsbpm-rule-param-name {
+    font-weight: bold;
+    margin-right: 2px;
+}
+
+.wsbpm-start-node .wsbpm-hide-when-start-node {
+    display: none !important;
+}
+
+#form-connection-condition .form-group {
+    margin-left: 15px;
+}
+
+#connection-simple-expression-container {
+    margin-top: 5px;
+}

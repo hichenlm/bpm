@@ -1,0 +1,39 @@
+<div class="modal fade wsbpm-modal" id="modal-gateway" tabindex="-1" role="dialog" aria-labelledby="gateway-title" aria-hidden="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+        <h4 class="modal-title" id="gateway-title">路由属性设置</h4>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="active"><a href="#gateway-basic" role="tab" data-toggle="tab">基本</a></li>
+          <li><a href="#extension" role="tab" data-toggle="tab">扩展</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade in active wsbpm-tab-basic" id="gateway-basic">
+            <form class="form-horizontal" role="form">
+              <div class="form-group form-group-sm">
+                <label for="gateway-name" class="col-sm-2 control-label">路由名称</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="gateway-name" placeholder="路由名称">
+                </div>
+              </div>
+              <div class="form-group form-group-sm">
+                <label for="gateway-description" class="col-sm-2 control-label">描述</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" id="gateway-description" placeholder="描述" rows="4" style="height: auto;"></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="hide" id="gateway-extension-anchor"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary btn-sm">保存</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,395 @@
+<div class="modal fade wsbpm-modal" id="modal-human-task" tabindex="-1" role="dialog" aria-labelledby="human-task-title" aria-hidden="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+        <h4 class="modal-title" id="human-task-title">人工活动属性设置</h4>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="active"><a href="#human-task-basic" role="tab" data-toggle="tab">基本</a></li>
+          <li><a class="wsbpm-hide-when-start-node" href="#human-task-participant" role="tab" data-toggle="tab">参与者</a></li>
+          <li><a href="#human-task-data" role="tab" data-toggle="tab">输出数据</a></li>
+          <li><a class="wsbpm-hide-when-start-node" href="#time-limit" role="tab" data-toggle="tab">时间限制</a></li>
+          <li><a class="wsbpm-hide-when-start-node" href="#human-task-work-item" role="tab" data-toggle="tab">多工作项</a></li>
+          <li><a href="#extension" role="tab" data-toggle="tab">扩展</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade in active wsbpm-tab-basic" id="human-task-basic">
+            <form class="form-horizontal" role="form">
+              <div class="form-group form-group-sm">
+                <label for="task-id" class="col-sm-2 control-label">任务代码</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="task-id" placeholder="任务代码">
+                </div>
+              </div>
+              <div class="form-group form-group-sm">
+                <label for="task-name" class="col-sm-2 control-label">任务名称</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="task-name" placeholder="任务名称">
+                </div>
+              </div>
+              <div class="form-group form-group-sm">
+                <label for="task-ui" class="col-sm-2 control-label">用户界面</label>
+                <div class="col-sm-10">
+                  <table style="width: 100%">
+                    <tbody>
+                      <tr>
+                        <td style="width: 100%"><input type="text" class="form-control" id="task-ui" placeholder="用户界面（按名称检索）"></td>
+                        <td style="padding-left: 5px"><button class="btn btn-default btn-sm" id="btn-ui-selector">浏览 ...</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="form-group form-group-sm">
+                <label for="task-description" class="col-sm-2 control-label">描述</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" id="task-description" placeholder="描述" rows="4" style="height: auto;"></textarea>
+                </div>
+              </div>
+              <div class="form-group form-group-sm">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" id="allow-agent" checked="checked">
+                      允许代理</label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- end of human-task-basic -->
+          <div class="tab-pane fade" id="human-task-participant">
+            <ul class="nav nav-pills" role="tablist">
+              <li role="presentation" class="active"><a href="#tab-participant-bussiness-rule" data-toggle="tab">按业务规则设置</a></li>
+              <li role="presentation"><a href="#tab-participant-task-executor" data-toggle="tab">从活动执行者中选择</a></li>
+              <li role="presentation"><a href="#tab-participant-relative-data" data-toggle="tab">从相关数据中获取</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane fade in active" id="tab-participant-bussiness-rule">
+                <!-- <p class="text-warning wsbpm-desc">按业务规则设置</p> -->
+                <form role="form">
+                  <div class="form-group form-group-sm">
+                    <div class="wsbpm-table-header">
+                      <label>参与者列表</label>
+                      <div class="btn-group">
+                        <button type="button" id="btn-select-participant" class="btn btn-link success btn-sm"><i class="fa fa-check-square-o"></i> 选择</button>
+                        <button type="button" id="btn-remove-participant" class="btn btn-link danger btn-sm"><i class="fa fa-trash-o"></i> 删除</button>
+                      </div>
+                    </div>
+                    <div class="wsbpm-table-container">
+                      <table class="table table-hover table-condensed" id="participant-list">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>代码</th>
+                            <th>名称</th>
+                            <th>类型</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="form-group form-group-sm">
+                    <div class="wsbpm-table-header">
+                      <label>规则列表</label>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-link success btn-sm" id="btn-add-participant-rule"><i class="fa fa-plus-square"></i> 添加</button>
+                        <button type="button" class="btn btn-link warning btn-sm" id="btn-edit-participant-rule"><i class="fa fa-edit"></i> 修改</button>
+                        <button type="button" class="btn btn-link danger btn-sm" id="btn-remove-participant-rule"><i class="fa fa-trash-o"></i> 删除</button>
+                      </div>
+                    </div>
+                    <div class="wsbpm-table-container">
+                      <table class="table table-hover table-condensed", id="participant-rule-list">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>名称</th>
+                            <th>参数</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" id="allow-participant-assignment">
+                        允许前驱活动从上述列表中指派活动参与者 </label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="tab-pane fade" id="tab-participant-task-executor">
+                <!-- <p class="text-warning wsbpm-desc">从活动执行者中选择</p> -->
+                <select class="form-control" id="participant-task-executor" size="8">
+                </select>
+              </div>
+              <div class="tab-pane fade" id="tab-participant-relative-data">
+                <!-- <p class="text-warning wsbpm-desc">从相关数据中获取</p> -->
+                <select class="form-control" id="participant-relative-data" size="8">
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade wsbpm-tab-output-data" id="human-task-data">
+            <form role="form">
+              <div class="form-group form-group-sm">
+                <div class="wsbpm-table-header">
+                  <label>人工活动输出数据列表</label>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-link success btn-sm wsbpm-btn-select"><i class="fa fa-check-square-o"></i> 选择</button>
+                    <button type="button" class="btn btn-link danger btn-sm wsbpm-btn-remove"><i class="fa fa-trash-o"></i> 删除</button>
+                  </div>
+                </div>
+                <div class="wsbpm-table-container">
+                  <table class="table table-hover table-condensed" id="human-task-data-list">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>名称</th>
+                        <th>类型</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="tab-pane fade" id="time-limit">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="start-time-limit">
+                启用时间限制 </label>
+            </div>
+            <form class="form-horizontal collapse" id="form-time-limit">
+              <fieldset>
+                <legend>日历设置</legend>
+                <div class="form-group form-group-sm">
+                  <label class="col-sm-3 control-label">选择日历</label>
+                  <div class="col-sm-9">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="time-limit-calendar-radios" checked="checked" value="defalut">
+                        默认日历 </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="time-limit-calendar-radios" value="7*24">
+                        7×24小时日历 </label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset id="fieldset-time-limit-policy">
+                <legend>时间限制策略</legend>
+                <div class="form-group form-group-sm">
+                  <label class="col-sm-3 control-label">
+                    <input type="radio" name="time-limit-policy-radios" checked="checked" value="fixed">
+                    固定时间</label>
+                  <div class="col-sm-9">
+                    <table>
+                      <tr>
+                        <td><input type="text" id="timeout-hours" class="form-control time-limit-policy-fixed" style="width: 60px;"></td>
+                        <td style="padding-left: 5px">小时</td>
+                        <td style="padding-left: 5px"><input type="text" id="timeout-minutes" class="form-control time-limit-policy-fixed" style="width: 60px;"></td>
+                        <td style="padding-left: 5px">分钟</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="form-group form-group-sm">
+                  <label class="col-sm-3 control-label">
+                    <input type="radio" name="time-limit-policy-radios" value="data">
+                    相关数据</label>
+                  <div class="col-sm-9">
+                    <select class="form-control time-limit-policy-data" disabled="disabled">
+                      <option></option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group form-group-sm">
+                  <div class="col-sm-offset-3 col-sm-9">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" checked="checked" id="timeout-email">
+                        启用邮件通知</label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset id="fieldset-timeout-policy">
+                <legend>超时预警策略</legend>
+                <div class="form-group form-group-sm">
+                  <label class="col-sm-3 control-label">
+                    <input type="radio" name="time-limit-warn-policy-radios" checked="checked" value="fixed">
+                    提前时间</label>
+                  <div class="col-sm-9">
+                    <table>
+                      <tr>
+                        <td><input type="text" id="warn-hours" class="form-control timeout-policy-fixed" style="width: 60px;"></td>
+                        <td style="padding-left: 5px">小时</td>
+                        <td style="padding-left: 5px"><input id="warn-minutes" type="text" class="form-control timeout-policy-fixed" style="width: 60px;"></td>
+                        <td style="padding-left: 5px">分钟</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="form-group form-group-sm">
+                  <label class="col-sm-3 control-label">
+                    <input type="radio" name="timeout-policy-radios" value="data">
+                    相关数据</label>
+                  <div class="col-sm-9">
+                    <select class="form-control timeout-policy-data" disabled="disabled">
+                      <option></option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group form-group-sm">
+                  <div class="col-sm-offset-3 col-sm-9">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" id="warn-email" checked="checked">
+                        启用邮件通知</label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="hide" id="human-task-time-limit-anchor"></div>
+          <div class="tab-pane fade" id="human-task-work-item">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="start-work-item">
+                启用多工作项设置</label>
+            </div>
+            <form class="form-horizontal collapse" id="form-work-item">
+              <fieldset id="fieldset-work-item-allocation-policy">
+                <legend>多工作项分配策略</legend>
+                <div class="col-sm-offset-1">
+                  <div class="form-group form-group-sm">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="work-item-allocation-policy-radios" value="by-participant">
+                        按参与者设置个数领取工作项 </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="work-item-allocation-policy-radios" checked="checked"  value="by-operator">
+                        按操作员个数分配工作项 </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group form-group-sm">
+                  <label class="col-sm-offset-1 col-sm-4 control-label" style="text-align: left">顺序执行工作项</label>
+                  <div class="col-sm-offset-5">
+                    <label class="radio-inline">
+                      <input type="radio" name="work-item-execute-sequentially-radios" value="yes" >
+                      是 </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="work-item-execute-sequentially-radios" value="no" checked="checked">
+                      否 </label>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset id="fieldset-work-item-complete-rule">
+                <legend>完成规则设定</legend>
+                <div class="col-sm-offset-1">
+                  <div class="form-group form-group-sm">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="work-item-complete-rule-radios" checked="checked" value="all">
+                        全部完成 </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-offset-1">
+                  <div class="form-group form-group-sm">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="work-item-complete-rule-radios" value="count">
+                        完成个数 </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group form-group-sm">
+                  <label class="col-sm-5 control-label">需要完成个数</label>
+                  <div class="col-sm-offset-5">
+                    <input type="text" class="form-control" style="width: 60px; display: inline-block" disabled="disabled" id="work-item-complete-count">
+                    <span style="margin-left: 5px">个</span> </div>
+                </div>
+                <div class="col-sm-offset-1">
+                  <div class="form-group form-group-sm">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="work-item-complete-rule-radios" value="percentage">
+                        完成百分比 </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group form-group-sm">
+                  <label class="col-sm-5 control-label">需要完成百分比</label>
+                  <div class="col-sm-offset-5">
+                    <input type="text" class="form-control" style="width: 60px; display: inline-block" disabled="disabled" id="work-item-complete-percentage">
+                    <span style="margin-left: 5px">%</span> </div>
+                </div>
+                <div class="form-group form-group-sm">
+                  <label class="col-sm-offset-1 col-sm-4 control-label" style="text-align: left">自动终止未完成的工作项</label>
+                  <div class="col-sm-offset-5">
+                    <label class="radio-inline">
+                      <input type="radio" name="end-undone-work-items-radios" value="yes" >
+                      是 </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="end-undone-work-items-radios" value="no" checked="checked">
+                      否 </label>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="tab-pane fade wsbpm-tab-extension" id="extension"> 
+            <form role="form">
+              <div class="form-group form-group-sm">
+                <div class="wsbpm-table-header">
+                  <label>扩展属性列表</label>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-link success btn-sm wsbpm-btn-add"><i class="fa fa-plus-square"></i> 增加</button>
+                    <button type="button" class="btn btn-link warning btn-sm wsbpm-btn-edit"><i class="fa fa-edit"></i> 修改</button>
+                    <button type="button" class="btn btn-link danger btn-sm wsbpm-btn-remove"><i class="fa fa-trash-o"></i> 删除</button>
+                  </div>
+                </div>
+                <div class="wsbpm-table-container">
+                  <table class="table table-hover table-condensed" id="extension-list">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>代码</th>
+                        <th>名称</th>
+                        <th>值</th>
+                        <th>备注</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="hide" id="human-task-extension-anchor"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary btn-sm">保存</button>
+      </div>
+    </div>
+  </div>
+</div>

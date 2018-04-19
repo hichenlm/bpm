@@ -1,0 +1,39 @@
+<div class="modal fade" id="modal-participant-rule-editor" tabindex="-1" role="dialog" aria-labelledby="participant-rule-editor-title" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+        <h4 class="modal-title" id="participant-rule-editor-title">参与者规则</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form" role="form">
+          <div class="form-group form-group-sm">
+            <label for="participant-rule">选择规则</label>
+            <select class="form-control" id="participant-rule">
+            </select>
+          </div>
+          <div id="participant-rule-param-list-container" class="collapse">
+            <label>填写参数</label>
+            <div class="wsbpm-table-container">
+              <table class="table table-condensed" id="participant-rule-param-list">
+                <thead>
+                  <tr>
+                    <th>参数名称</th>
+                    <th>参数类型</th>
+                    <th>参数值</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary">确定</button>
+      </div>
+    </div>
+  </div>
+</div>

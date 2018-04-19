@@ -1,0 +1,86 @@
+<div class="modal fade wsbpm-modal" id="modal-service-task" tabindex="-1" role="dialog" aria-labelledby="service-task-title" aria-hidden="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+        <h4 class="modal-title" id="service-task-title">自动活动属性设置</h4>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="active"><a href="#service-task-basic" role="tab" data-toggle="tab">基本</a></li>
+          <li><a href="#service-task-data" role="tab" data-toggle="tab">输出数据</a></li>
+          <li><a href="#extension" role="tab" data-toggle="tab">扩展</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade in active wsbpm-tab-basic" id="service-task-basic">
+            <form class="form-horizontal" role="form">
+              <div class="form-group form-group-sm">
+                <label for="service-task-id" class="col-sm-2 control-label">任务代码</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="service-task-id" placeholder="任务代码">
+                </div>
+              </div>
+              <div class="form-group form-group-sm">
+                <label for="service-task-name" class="col-sm-2 control-label">任务名称</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="service-task-name" placeholder="任务名称">
+                </div>
+              </div>
+              <div class="form-group form-group-sm">
+                <label for="task-service" class="col-sm-2 control-label">调用服务</label>
+                <div class="col-sm-10">
+                  <table style="width: 100%">
+                    <tbody>
+                      <tr>
+                        <td style="width: 100%"><input type="text" class="form-control" id="task-service" placeholder="调用服务（按名称检索）"></td>
+                        <td style="padding-left: 5px"><button class="btn btn-default btn-sm" id="btn-service-selector">浏览 ...</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="form-group form-group-sm">
+                <label for="service-task-description" class="col-sm-2 control-label">描述</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" id="service-task-description" placeholder="描述" rows="4" style="height: auto;"></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- end of service-task-basic -->
+          <div class="tab-pane fade wsbpm-tab-output-data" id="service-task-data">
+            <form role="form">
+              <div class="form-group form-group-sm">
+                <div class="wsbpm-table-header">
+                  <label>自动活动输出数据列表</label>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-link success btn-sm wsbpm-btn-select"><i class="fa fa-check-square-o"></i> 选择</button>
+                    <button type="button" class="btn btn-link danger btn-sm wsbpm-btn-remove"><i class="fa fa-trash-o"></i> 删除</button>
+                  </div>
+                </div>
+                <div class="wsbpm-table-container">
+                  <table class="table table-hover table-condensed" id="service-task-data-list">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>名称</th>
+                        <th>类型</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="hide" id="service-task-extension-anchor"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary btn-sm">保存</button>
+      </div>
+    </div>
+  </div>
+</div>

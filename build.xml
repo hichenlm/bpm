@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="webstorm-bpm" default="build">
+  <property environment="env"/>
+
+  <property name="html.dir" location="src/web/html"/>
+  <property name="classes.dir" location="run/WEB-INF/classes"/>
+  <property name="run.lib.dir" location="run/WEB-INF/lib"/>
+
+  <path id="compile.classpath">
+    <fileset dir="lib/">
+      <include name="*.jar" />
+    </fileset>
+  </path>
+
+  <path id="compile.bootclasspath">
+    <fileset dir="${env.JAVA_15_HOME}/jre/lib/">
+      <include name="*.jar" />
+    </fileset>
+  </path>
+
+  <target name="init">
+    <mkdir dir="${run.lib.dir}" />
+    <mkdir dir="${classes.dir}" />
+  </target>
+
+  <target name="compile" depends="init">
+    <javac destdir="${classes.dir}" 
+    	   fork="true"
+           includeantruntime="false" 
+           classpathref="compile.classpath" 
+           debug="true"
+           srcdir="src/java"/>
+  </target>
+
+  <target name="build" depends="compile">
+    <copy todir="${run.lib.dir}">
+      <fileset dir="lib" excludes="servlet-api.jar"/>
+    </copy>
+
+    <copy todir="${classes.dir}">
+      <fileset dir="src/clojure"/>
+    </copy>
+
+    <copy todir="run">
+      <fileset dir="src/web"/>
+    </copy>
+
+    <concat destfile = "run/main.html">
+      <fileset file="${html.dir}/head.html" />
+      <fileset file="${html.dir}/body.html" />
+      <fileset file="${html.dir}/human-task.html" />
+      <fileset file="${html.dir}/event.html" />
+      <fileset file="${html.dir}/gateway.html" />
+      <fileset file="${html.dir}/service-task.html" />
+      <fileset file="${html.dir}/connection.html" />
+      <fileset file="${html.dir}/process.html" />
+      <fileset file="${html.dir}/ui-selector.html" />
+      <fileset file="${html.dir}/service-selector.html" />
+      <fileset file="${html.dir}/participant-selector.html" />
+      <fileset file="${html.dir}/participant-rule-editor.html" />
+      <fileset file="${html.dir}/data-selector.html" />
+      <fileset file="${html.dir}/extension-editor.html" />
+    </concat>
+  </target>
+</project>

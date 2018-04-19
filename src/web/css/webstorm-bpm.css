@@ -1,0 +1,208 @@
+* {
+    outline: 0 !important;
+}
+
+/* 覆盖 bootstrap 字体 */
+body {
+    font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.wsbpm-move {
+    cursor: move; 
+}
+
+.wsbpm-none {
+    cursor: none; 
+}
+
+.wsbpm-not-allowed {
+    cursor: not-allowed;
+}
+
+.wsbpm-allowed {
+    cursor: crosshair;
+}
+
+.wsbpm-pointer {
+    cursor: pointer;
+}
+
+.wsbpm-grab {    
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: url(img/openhand.cur), move;
+    cursor: url(img/openhand.cur) 8 8, move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.wsbpm-grabbing {
+    cursor: move;
+    cursor: url(img/closedhand.cur), move;
+    cursor: url(img/closedhand.cur) 8 8, move;
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
+.wsbpm-disable-text-selection {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.wsbpm-top-banner {
+    background-color: #6f5499;
+    background-image: linear-gradient(to bottom,#563d7c 0,#6f5499 100%);
+    width: 100%;
+    height: 80px;
+    vertical-align: bottom;
+    position: relative;
+}
+
+.wsbpm-top-banner .wsbpm-top-logo {
+    height: 100%;
+    float: left;
+}
+
+.wsbpm-top-title-box {
+    position: absolute;
+    left: 140px;
+    bottom: 12px;
+}
+
+.wsbpm-top-title-box .wsbpm-top-title{
+    color: rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 0px;
+    font-family: KaiTi;
+    font-size: 36px;
+}
+
+.wsbpm-top-banner .wsbpm-top-process-name{
+    margin-left: 10px;
+    color: rgb(205, 191, 227);
+    text-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 0px;
+    font-size: 24px;
+    /* font-family: Microsoft YaHei; */
+}
+
+.wsbpm-toolbox {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 40px;
+    bottom: 0;
+    background-color: #F0F0F0;
+}
+
+.wsbpm-toolbox div{
+    width: 34px;
+    height: 34px;
+    margin: 2px;
+    text-align: center;
+    border-color: transparent;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.wsbpm-toolbox div:hover {
+    background-color: #DDECFF;
+    border-color: #26A0DA;    
+    border-width: 1px;
+    border-style: solid;
+}
+
+div.wsbpm-toolbox div.wbpm-tool-selected {
+    background-color: #BFDAFC;
+    border-color: #2C628B;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.wsbpm-right-box {
+    position: absolute;
+    top: 80px;
+    left: 40px;
+    right: 0;
+    bottom: 0;
+}
+
+.wsbpm-toolbar {
+    margin-top: 5px;
+    margin-left: 1px;
+    margin-bottom: 5px;
+}
+
+.wsbpm-toolbar .wsbpm-scale-input-group {
+    width: 10px;
+}
+
+.wsbpm-toolbar #scale-text {
+    width: 60px;
+}
+
+.wsbpm-toolbar .wsbpm-show-grid-lines, .wsbpm-toolbar .wsbpm-show-connections {
+    margin-top: 2px;
+    margin-left: 8px;
+}
+
+.wsbpm-toolbar .wsbpm-show-grid-lines span{
+    font-size: 12px;
+    /* font-family: Microsoft YaHei;     */
+}
+
+.wsbpm-canvas {
+    position: absolute;
+    top: 40px;
+    left: 5px;
+    right: 6px;
+    bottom: 6px;
+    border-color: #D5E0D7;
+    border-width: 1px;
+    border-style: outset;
+    overflow: hidden;
+}
+
+.wsbpm-canvas .wsbpm-selection-box {
+    position: absolute;
+    border: 0;
+    background-color: rgba(102, 102, 102, 0.1);
+}
+
+.wsbpm-alert .bootbox-body{
+    color: #a94442;
+    /* font-family: Microsoft YaHei; */
+    font-size: 14px;
+}
+
+.wsbpm-notifications.notifications {
+    /* font-family: Microsoft YaHei; */
+    font-size: 18px;
+}
+
+.wsbpm-notifications.notifications.top-left {
+    left: 50px;
+    top: 120px;
+}
+
+.wsbpm-notifications.notifications.top-right {
+    top: 90px;
+    right: 15px;
+}
+
+.wsbpm-notifications.notifications.bottom-left {
+    left: 50px;
+}
+
+.wsbpm-notifications.notifications .alert {
+    width: 200px;
+}
+
+.wsbpm-node-state {
+    position: absolute;
+    color: #ef7186;
+    z-index: 9999;
+}

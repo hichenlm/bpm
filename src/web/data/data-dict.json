@@ -1,0 +1,16 @@
+{"fields":
+ [{"name": "申请单编号", "type": "string", "array?": false}, 
+  {"name": "申请人", "type": "user", "array?": false}, 
+  {"name": "申请人所属机构", "type": "org", "array?": false}, 
+  {"name": "请假类型", "type": "select(qjlx)", "array?": false}, 
+  {"name": "请假天数", "type": "number", "array?": false}, 
+  {"name": "请假原因", "type": "string", "array?": false}, 
+  {"name": "直属上级", "type": "user", "array?": false},
+  {"name": "直属上级审批结果", "type": "select(tyf)", "array?": false},
+  {"name": "直属上级审批意见", "type": "string", "array?": false},
+  {"name": "部门领导", "type": "user", "array?": false},
+  {"name": "部门领导审批结果", "type": "select(tyf)", "array?": false},
+  {"name": "部门领导审批意见", "type": "string", "array?": false}],
+ "selects":
+ [{"name": "select(qjlx)", "options":["年假", "病假", "事假"]},
+  {"name": "select(tyf)", "options":["同意", "不同意"]}]}

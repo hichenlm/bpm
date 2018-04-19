@@ -1,0 +1,94 @@
+<div class="modal fade wsbpm-modal" id="modal-connection" tabindex="-1" role="dialog" aria-labelledby="connection-title" aria-hidden="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+        <h4 class="modal-title" id="connection-title">连接线属性设置</h4>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="active"><a href="#connection-basic" role="tab" data-toggle="tab">基本</a></li>
+          <li><a href="#connection-condition" role="tab" data-toggle="tab">条件</a></li>
+          <li><a href="#extension" role="tab" data-toggle="tab">扩展</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade in active wsbpm-tab-basic" id="connection-basic">
+            <form class="form-horizontal" role="form">
+              <div class="form-group form-group-sm">
+                <label for="connection-name" class="col-sm-2 control-label">连续名称</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="connection-name" placeholder="连线名称">
+                </div>
+              </div>
+              <div class="form-group form-group-sm">
+                <label for="connection-priority" class="col-sm-2 control-label">优先级</label>
+                <div class="col-sm-10">
+                  <select class="form-control" id="connection-priority">
+                    <option value="9">极高</option>
+                    <option value="8">高</option>
+                    <option value="5">中</option>
+                    <option value="2">低</option>
+                    <option value="1">极低</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group form-group-sm">
+                <label for="connection-description" class="col-sm-2 control-label">描述</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" id="connection-description" placeholder="描述" rows="4" style="height: auto;"></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- end of connection-basic -->
+          <div class="tab-pane fade wsbpm-tab-output-data" id="connection-condition">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="is-default-connection">
+                默认连线 </label>
+            </div>
+            <form class="form-horizontal collapse in" id="form-connection-condition">
+              <div class="form-group form-group-sm">
+                <label class="control-label">
+                  <input type="radio" name="connection-cond-radios" checked="checked" value="simple">
+                  简单表达式
+                </label>
+                <div id="connection-simple-expression-container">
+                  <table>
+                    <tr>
+                      <th>左值:</th>
+                      <th style="padding-left: 15px">比较操作:</th>
+                      <th style="padding-left: 15px" colspan="2">右值:</th>
+                    </tr>
+                    <tr>
+                      <td><select class="form-control" id="connection-cond-variable"></select></td>
+                      <td style="padding-left: 15px"><select class="form-control" id="connection-cond-comparator"></select></td>
+                      <td style="padding-left: 15px"><input id="connection-cond-value-is-variable" type="checkbox" checked="checked" data-size="small" data-on-text="变量" data-off-text="常量"></td>
+                      <td style="padding-left: 5px" id="connection-cond-value-cell">
+                        <!-- <input type="text" class="form-control input-sm" id="connection-cond-value"><input> -->
+                        <!-- <select class="form-control input-sm" id="connection-cond-value"><select> -->
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="form-group form-group-sm">
+                <label class="control-label">
+                  <input type="radio" name="connection-cond-radios" value="complex">
+                  复杂表达式
+                </label>
+                <textarea class="form-control" id="connection-cond-complex" placeholder="复杂表达式" rows="4" style="margin-top: 5px; width: 95%; height: auto;"></textarea>
+              </div>
+            </form>
+          </div>
+
+          <div class="hide" id="connection-extension-anchor"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary btn-sm">保存</button>
+      </div>
+    </div>
+  </div>
+</div>

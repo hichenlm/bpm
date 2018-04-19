@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="webstorm-bpm" default="compile">
+  <target name="init">
+    <mkdir dir="build" />
+    <mkdir dir="build/classes" />
+  </target>
+
+  <target name="compile" depends="init">
+    <javac destdir="build/classes" 
+    	   fork="true"
+           includeantruntime="true" 
+           debug="true" 
+           srcdir="src/"/>
+  </target>
+
+  <target name="jar" depends="compile">
+
+  </target>
+</project>

@@ -1,0 +1,47 @@
+<div class="modal fade wsbpm-modal" id="modal-process" tabindex="-1" role="dialog" aria-labelledby="process-title" aria-hidden="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+        <h4 class="modal-title" id="process-title">流程属性设置</h4>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="active"><a href="#process-basic" role="tab" data-toggle="tab">基本</a></li>
+          <li><a href="#time-limit" role="tab" data-toggle="tab">时间限制</a></li>
+          <li><a href="#extension" role="tab" data-toggle="tab">扩展</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade in active wsbpm-tab-basic" id="process-basic">
+            <form class="form-horizontal" role="form">
+              <div class="form-group form-group-sm">
+                <label for="process-id" class="col-sm-2 control-label">流程代码</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="process-id" placeholder="流程代码">
+                </div>
+              </div>
+              <div class="form-group form-group-sm">
+                <label for="process-name" class="col-sm-2 control-label">流程名称</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="process-name" placeholder="流程名称">
+                </div>
+              </div>
+              <div class="form-group form-group-sm">
+                <label for="process-description" class="col-sm-2 control-label">描述</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" id="process-description" placeholder="描述" rows="4" style="height: auto;"></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="hide" id="process-time-limit-anchor"></div>
+          <div class="hide" id="process-extension-anchor"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary btn-sm">保存</button>
+      </div>
+    </div>
+  </div>
+</div>

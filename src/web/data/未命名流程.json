@@ -1,0 +1,1 @@
+{"id":"3","process-config":{"name":"未命名流程"},"nodes":[{"id":"1","category":"event","type":"start","config":{"name":"开始"},"pos":{"x":80,"y":80},"inConns":[],"outConns":[]},{"id":"2","category":"event","type":"end","config":{"name":"结束"},"pos":{"x":400,"y":80},"inConns":[],"outConns":[]}],"connections":[]}
